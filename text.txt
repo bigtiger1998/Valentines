@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quick Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .box {
+      max-width: 320px;
+      padding: 20px;
+    }
+    button {
+      padding: 12px 18px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: none;
+      background: #111;
+      color: #fff;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="game">
+  <p>Let’s play a very small game.<br>Follow instructions 😌</p>
+  <button onclick="next()">Start</button>
+</div>
+
+<script>
+let step = 0;
+const game = document.getElementById("game");
+
+function next() {
+  step++;
+  if (step === 1) game.innerHTML = `<p>Look up.</p><button onclick="next()">Done</button>`;
+  if (step === 2) game.innerHTML = `<p>Now look down.</p><button onclick="next()">Done</button>`;
+  if (step === 3) game.innerHTML = `<p>Screenshot this page.</p><button onclick="next()">I did</button>`;
+  if (step === 4) game.innerHTML = `<p>Go to your gallery.<br>Check the screenshot.</p><button onclick="next()">Okay</button>`;
+  if (step === 5) game.innerHTML = `<p>I lied 😌<br><br>Will you be my Valentine? ❤️</p><button>Yes</button>`;
+}
+</script>
+
+</body>
+</html>
